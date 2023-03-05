@@ -1,0 +1,12 @@
+<div class="card border-info mb-3" style="max-width: 18rem" *ngFor="let opinion of opiniones">
+    <div class="card-header">{{opinion.user}}</div>
+    <div class="card-body">
+        <p class="card-text">{{opinion.text}}</p>
+    </div>
+</div>
+
+<div class="card-body" *ngIf="opiniones.length === 0">
+    <div class="card-body">
+        <p class="card-text">El artículo todavía no tiene opiniones.</p>
+    </div>
+</div>

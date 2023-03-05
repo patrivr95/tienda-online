@@ -1,0 +1,10 @@
+<div class="card border-info mb-3" style="max-width: 18rem" *ngFor="let talla of tallas">
+    <div class="card-header">{{talla}}</div>
+</div>
+
+<div class="card-body" *ngIf="tallas?.length === 0">
+    <div class="card-body">
+        <p class="card-text">No quedan tallas</p>
+    </div>
+</div>
+

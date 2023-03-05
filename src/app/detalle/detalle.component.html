@@ -1,0 +1,30 @@
+
+
+  <div class="card mb-3" style="max-width: 540px;"  *ngIf="articuloCompleto">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="articuloCompleto.imgDescription" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{articuloCompleto.name}}</h5>
+          <p class="card-text">{{articuloCompleto.description}}</p>
+          <p class="card-text">Precio: {{articuloCompleto.price}}€</p>
+          <p class="card-text text-success" *ngIf="articuloCompleto.stock; else bloqueSinStock">Artículo en stock</p>
+          <ng-template #bloqueSinStock>
+            <p class="card-text text-danger">Artículo sin stock</p>
+          </ng-template>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-primary" (click)="goToTallas()">Tallas</button>
+            <button type="button" class="btn btn-secondary" (click)="goToOpiniones()">Opiniones</button>
+          </div>
+
+          <router-outlet></router-outlet>
+
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-link" (click)="volver()">Volver</span>
+      </div>
+    </div>
+  </div>
